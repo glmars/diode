@@ -26,7 +26,8 @@ libraryDependencies ++= Seq(
   "io.suzaku"                         %%% "diode"          % diodeVersion,
   "io.suzaku"                         %%% "diode-devtools" % diodeVersion,
   "io.suzaku"                         %%% "diode-react"    % diodeVersion,
-  "io.suzaku"                         %%% "boopickle"      % "1.2.6"
+  "io.suzaku"                         %%% "boopickle"      % "1.2.6",
+  "com.lihaoyi" %%% "upickle" % "0.4.3"
 )
 
 jsDependencies ++= Seq(

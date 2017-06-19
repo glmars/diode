@@ -2,6 +2,7 @@ package example
 
 import boopickle.Default._
 import diode.dev.{Hooks, PersistStateIDB}
+import eldis.redux.devtools.ReduxDevToolsActionProcessor
 import org.scalajs.dom
 
 import scala.scalajs.js.JSApp
@@ -61,6 +62,7 @@ object TodoMVC extends JSApp {
 
   @JSExport
   override def main(): Unit = {
+    AppCircuit.addProcessor(new ReduxDevToolsActionProcessor[AppModel]())
     // add a development tool to persist application state
     AppCircuit.addProcessor(new PersistStateIDB(pickle, unpickle))
     // hook it into Ctrl+Shift+S and Ctrl+Shift+L
